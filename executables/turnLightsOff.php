@@ -15,6 +15,9 @@ use unreal4u\MQTT\Protocol\Publish;
 use unreal4u\MQTT\Protocol\Subscribe;
 use unreal4u\MQTT\Protocol\Subscribe\Topic;
 
+// TODO implement this
+
+/*
 function writeStateFile(\DateTimeImmutable $date, string $command, Logger $logger): bool
 {
     $logger->debug('Writing statefile', ['date' => $date->format('c'), 'command' => $command]);
@@ -42,6 +45,7 @@ function forcedLightShutdown(Logger $logger, int $minutes = 5): bool
         $logger->debug('Lights on, checking whether it is time to turn it off');
         $now = new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
         /** @var \DateTimeImmutable $optionalFutureDate */
+/*
         $optionalFutureDate = $stateFile['commandDate']->add(new \DateInterval('PT' . $minutes . 'M'));
         $logger->info('Dates', [
             'now' => $now->format('YmdHis'),
@@ -171,3 +175,4 @@ foreach ($subscribe->loop($client) as $message) {
         $logger->warning('Statefile and mqtt command are the same!');
     }
 }
+*/

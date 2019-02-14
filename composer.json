@@ -1,9 +1,9 @@
 {
     "minimum-stability": "dev",
     "require": {
-        "unreal4u/mqtt": "@stable",
+        "php": ">=7.0",
+        "unreal4u/mqtt": "~1.0",
         "piphp/gpio": "~0.3",
         "monolog/monolog": "@stable"
     }
 }
-

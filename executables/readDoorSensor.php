@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-include(__DIR__.'/../vendor/autoload.php');
+include __DIR__ . '/../vendor/autoload.php';
 
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Handler\StreamHandler;
@@ -13,8 +13,6 @@ use Monolog\Logger;
 use PiPHP\GPIO\GPIO;
 use PiPHP\GPIO\Pin\InputPinInterface;
 use PiPHP\GPIO\Pin\PinInterface;
-
-#$app = new App();
 
 // Create a GPIO object
 $gpio = new GPIO();
@@ -34,15 +32,15 @@ $doorPin->setEdge(InputPinInterface::EDGE_BOTH);
 $interruptWatcher = $gpio->createWatcher();
 
 // Register a callback to be triggered on pin interrupts
-$interruptWatcher->register($doorPin, function(InputPinInterface $doorPin, $value) use ($logger, $relayPin) {
+$interruptWatcher->register($doorPin, function (InputPinInterface $doorPin, $value) use ($logger, $relayPin) {
     if ($value === 1) {
-	$logger->info('Door was opened');
+        $logger->info('Door was opened');
         $relayPin->setValue(PinInterface::VALUE_LOW);
         // TODO inform MQTT that door has been opened and light did go on
     } else {
         $logger->info('Door was closed');
         $relayPin->setValue(PinInterface::VALUE_HIGH);
-	// TODO inform MQTT that door has been closed, do NOT turn light immediately off
+        // TODO inform MQTT that door has been closed, do NOT turn light immediately off
     }
 
     // Returning false will make the watcher return false immediately
@@ -50,5 +48,4 @@ $interruptWatcher->register($doorPin, function(InputPinInterface $doorPin, $valu
 });
 
 // Watch for interrupts, timeout after 50000ms (50 seconds)
-while ($interruptWatcher->watch(50000));
-
+while ($interruptWatcher->watch(50000)) ;
