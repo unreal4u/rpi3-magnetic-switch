@@ -21,7 +21,10 @@ Schematics
 --------
 
 The general connections are made using the following diagram:
+![Connections diagram](/magnetic-switch-kelder-schematics.png)
 
+Pin layout is based on this diagram:
+![GPIO pin diagram](/rpi3-gpio-pins.png)
 
 Other information
 --------
