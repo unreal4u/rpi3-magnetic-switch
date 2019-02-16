@@ -32,7 +32,7 @@ $doorPin->setEdge(InputPinInterface::EDGE_BOTH);
 $interruptWatcher = $gpio->createWatcher();
 
 // Register a callback to be triggered on pin interrupts
-$interruptWatcher->register($doorPin, function (InputPinInterface $doorPin, $value) use ($logger, $relayPin) {
+$interruptWatcher->register($doorPin, function ($value) use ($logger, $relayPin) {
     if ($value === 1) {
         $logger->info('Door was opened');
         $relayPin->setValue(PinInterface::VALUE_LOW);
@@ -48,4 +48,4 @@ $interruptWatcher->register($doorPin, function (InputPinInterface $doorPin, $val
 });
 
 // Watch for interrupts, timeout after 50000ms (50 seconds)
-while ($interruptWatcher->watch(50000)) ;
+while ($interruptWatcher->watch(50000));
