@@ -5,7 +5,7 @@ services:
     hostname: mosquitto
     image: eclipse-mosquitto:latest
     ports:
-      - "1883:1883"
+      - "1884:1883"
   cli:
     environment:
       - PHP_IDE_CONFIG=serverName=${VIRTUAL_HOST}%

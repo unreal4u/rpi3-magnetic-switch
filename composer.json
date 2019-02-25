@@ -1,9 +1,12 @@
 {
-    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
-        "unreal4u/mqtt": "~1.0",
         "piphp/gpio": "~0.3",
-        "monolog/monolog": "@stable"
+        "unreal4u/rpi-common-libraries": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "unreal4u\\rpiMagneticSwitch\\": "app"
+        }
     }
 }

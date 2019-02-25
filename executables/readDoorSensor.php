@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection SuspiciousSemicolonInspection */
 
 /**
  * Copied mainly from https://github.com/PiPHP/GPIO#input-pin-interrupts with a few adjustments
@@ -48,4 +48,5 @@ $interruptWatcher->register($doorPin, function ($value) use ($logger, $relayPin)
 });
 
 // Watch for interrupts, timeout after 50000ms (50 seconds)
+/** @noinspection PhpStatementHasEmptyBodyInspection */
 while ($interruptWatcher->watch(50000));
