@@ -68,9 +68,9 @@ class readDoorSensor extends Base {
         $interruptWatcher = $this->gpio->createWatcher();
 
         // Register a callback to be triggered on pin interrupts
-        $interruptWatcher->register($this->doorPin, function ($value) {
+        $interruptWatcher->register($this->doorPin, function (InputPinInterface $pin, $value) {
             $mqttCommunicator = $this->communicationsFactory('MQTT');
-
+	    $this->logger->debug('Got a value from the sensor', ['pinNumber' => $pin->getNumber(), 'value' => $value]);
             if ($value === 1) {
                 $this->logger->info('Door was opened');
                 // Turn on light first ASAP, do logging afterwards

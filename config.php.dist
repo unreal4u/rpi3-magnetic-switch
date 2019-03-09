@@ -1,0 +1,6 @@
+<?php
+
+// Enable and adjust the following values to the actual credentials
+#const MQTT_HOST = '';
+#const MQTT_USERNAME = '';
+#const MQTT_PASSWORD = '';
