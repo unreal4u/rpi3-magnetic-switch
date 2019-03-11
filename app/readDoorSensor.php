@@ -82,7 +82,7 @@ class readDoorSensor extends Base {
                 $mqttCommunicator->sendMessage('sensors/kelder/door', 'open');
                 $mqttCommunicator->sendMessage('commands/kelder/light', 'on');
             } else {
-                $this->logger->info('Door was closed');
+                $this->logger->info('Door was closed', ['uniqueIdentifier' => $this->getUniqueIdentifier()]);
                 $this->relayPin->setValue(PinInterface::VALUE_HIGH);
                 $mqttCommunicator->sendMessage('sensors/kelder/door', 'closed');
             }

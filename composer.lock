@@ -526,12 +526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unreal4u/rpi-common-libraries.git",
-                "reference": "b1ac2fb8161650d28a7c801a85d0ca31df408587"
+                "reference": "55a4033ad87e87fcfbb5ac043ae6e31e108858b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unreal4u/rpi-common-libraries/zipball/b1ac2fb8161650d28a7c801a85d0ca31df408587",
-                "reference": "b1ac2fb8161650d28a7c801a85d0ca31df408587",
+                "url": "https://api.github.com/repos/unreal4u/rpi-common-libraries/zipball/55a4033ad87e87fcfbb5ac043ae6e31e108858b2",
+                "reference": "55a4033ad87e87fcfbb5ac043ae6e31e108858b2",
                 "shasum": ""
             },
             "require": {
@@ -559,7 +559,7 @@
                 }
             ],
             "description": "Common functionality I use for my rPi IoT automation tasks",
-            "time": "2019-03-11T22:03:49+00:00"
+            "time": "2019-03-11T22:26:50+00:00"
         }
     ],
     "packages-dev": [],
