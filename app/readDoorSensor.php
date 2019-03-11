@@ -43,6 +43,8 @@ class readDoorSensor extends Base {
 
         // Configure interrupts for both rising and falling edges
         $this->doorPin->setEdge(InputPinInterface::EDGE_BOTH);
+        // Set the default on boot: lights off
+        $this->relayPin->setValue(PinInterface::VALUE_HIGH);
 
         return $this;
     }
