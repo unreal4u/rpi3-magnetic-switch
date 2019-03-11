@@ -37,7 +37,14 @@ How to run the program
 This program consists of 2 scripts: one that primarily checks out what the status of the door is and opens up the relay,
 while the other implements only a timer and will turn the relay down after the door has been closed.
 
-**TODO: add commands**
+It uses standard symfony components to achieve this. In the case of this program, calling the following script will
+start the program:
+
+`sudo bin/console readDoorSensor`
+
+If you want to make it a cronjob, put the following line in your crontab:
+
+`*/2 * * * * sudo [ABSOLUTE_PATH_TO_APPLICATION]/bin/console readDoorSensor`
 
 Other information
 --------
