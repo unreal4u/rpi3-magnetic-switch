@@ -9,7 +9,7 @@ use PiPHP\GPIO\Pin\InputPin;
 use PiPHP\GPIO\Pin\InputPinInterface;
 use PiPHP\GPIO\Pin\OutputPin;
 use PiPHP\GPIO\Pin\PinInterface;
-use unreal4u\rpiCommonLibrary\Functional\Base;
+use unreal4u\rpiCommonLibrary\Base;
 use unreal4u\rpiCommonLibrary\JobContract;
 
 class readDoorSensor extends Base {
@@ -50,6 +50,7 @@ class readDoorSensor extends Base {
     public function configure()
     {
         $this
+            ->setName('baseroom:door-sensor')
             ->setDescription('Reads out the door sensor and turns light immediately on')
             ->setHelp('Reads out the door sensor and passes this information back to the MQTT broker')
         ;
@@ -68,10 +69,14 @@ class readDoorSensor extends Base {
         // Register a callback to be triggered on pin interrupts
         $interruptWatcher->register($this->doorPin, function (InputPinInterface $pin, $value) {
             $mqttCommunicator = $this->communicationsFactory('MQTT');
-            $this->logger->debug('Got a value from the sensor', ['pinNumber' => $pin->getNumber(), 'value' => $value]);
+            $this->logger->debug('Got a value from the sensor', [
+                'pinNumber' => $pin->getNumber(),
+                'value' => $value,
+                'uniqueIdentifier' => $this->getUniqueIdentifier(),
+            ]);
 
             if ($value === 1) {
-                $this->logger->info('Door was opened');
+                $this->logger->info('Door was opened', ['uniqueIdentifier' => $this->getUniqueIdentifier()]);
                 // Turn on light first ASAP, do logging afterwards
                 $this->relayPin->setValue(PinInterface::VALUE_LOW);
                 $mqttCommunicator->sendMessage('sensors/kelder/door', 'open');
@@ -95,11 +100,11 @@ class readDoorSensor extends Base {
     /**
      * If method runJob returns false, this will return an array with errors that may have happened during execution
      *
-     * @return array
+     * @return \Generator
      */
-    public function retrieveErrors(): array
+    public function retrieveErrors(): \Generator
     {
-        return [];
+        yield '';
     }
 
     /**

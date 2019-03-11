@@ -28,6 +28,9 @@ The general connections are made using the following diagram:
 used to control devices dealing with AC voltage, if you don't even know what "AC" means, DO NOT use this guide and hire
 somebody that knows about it!
 
+[AC voltages *CAN* kill you!](https://www.youtube.com/watch?v=trmxzUVT2eE)  
+[You don't believe me?](https://www.youtube.com/watch?v=snk3C4m44SY)
+
 Pin layout is based on this diagram:
 ![GPIO pin diagram](/rpi3-gpio-pins.png)
 
@@ -40,11 +43,14 @@ while the other implements only a timer and will turn the relay down after the d
 It uses standard symfony components to achieve this. In the case of this program, calling the following script will
 start the program:
 
-`sudo bin/console readDoorSensor`
+`sudo bin/console baseroom:door-sensor`
 
 If you want to make it a cronjob, put the following line in your crontab:
 
 `*/2 * * * * sudo [ABSOLUTE_PATH_TO_APPLICATION]/bin/console readDoorSensor`
+
+This script is run with sudo because it needs access to the GPIO. There might be more elegant ways to solve this issue,
+but this one is the first one that came up to me and it works.
 
 Other information
 --------

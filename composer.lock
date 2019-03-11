@@ -173,16 +173,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1f0ad51dfde4da8a6070f06adc58b4e37cbb37a4"
+                "reference": "9dc2299a016497f9ee620be94524e6c0af0280a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1f0ad51dfde4da8a6070f06adc58b4e37cbb37a4",
-                "reference": "1f0ad51dfde4da8a6070f06adc58b4e37cbb37a4",
+                "url": "https://api.github.com/repos/symfony/console/zipball/9dc2299a016497f9ee620be94524e6c0af0280a9",
+                "reference": "9dc2299a016497f9ee620be94524e6c0af0280a9",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +241,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-25T14:35:16+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -313,7 +313,7 @@
         },
         {
             "name": "symfony/lock",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/lock.git",
@@ -526,12 +526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unreal4u/rpi-common-libraries.git",
-                "reference": "c23bfe3c0b90b293c02b904b17ca9b5267176d80"
+                "reference": "a78eafa041a1bfb582a7c53ff975930dacc3d17e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unreal4u/rpi-common-libraries/zipball/c23bfe3c0b90b293c02b904b17ca9b5267176d80",
-                "reference": "c23bfe3c0b90b293c02b904b17ca9b5267176d80",
+                "url": "https://api.github.com/repos/unreal4u/rpi-common-libraries/zipball/a78eafa041a1bfb582a7c53ff975930dacc3d17e",
+                "reference": "a78eafa041a1bfb582a7c53ff975930dacc3d17e",
                 "shasum": ""
             },
             "require": {
@@ -559,7 +559,7 @@
                 }
             ],
             "description": "Common functionality I use for my rPi IoT automation tasks",
-            "time": "2019-02-25T22:14:24+00:00"
+            "time": "2019-03-11T21:23:36+00:00"
         }
     ],
     "packages-dev": [],
